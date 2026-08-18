@@ -1,6 +1,86 @@
-.body {
+@font-face {
+	font-family: Roboto;
+	src: url("../fonts/Roboto-Regular.ttf") format("ttf");
+}
+
+:root {
+	--background: #15191c;
+	--text-color: white;
+	--button-digits: #2f2f2f;
+	--button-special-digits: #5a5a5a;
+	--button-operators: #ff9200;
+	--container-background: black;
+	--container-border: #c7c7cc;
+}
+
+body {
 	display: flex;
-	margin: 0;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: var(--background);
+	margin: auto;
 	padding: 0;
 }
 
+#container {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--container-background);
+	border: 5px solid var(--container-border);
+	flex-wrap: wrap;
+	min-height: 600px;
+	max-height: 600px;
+	min-width: 300px;
+	border-radius: 40px;
+}
+
+#display {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	max-height: 300px;
+	max-width: 300px;
+	min-height: 200px;
+	max-height: 200px;
+}
+
+#keyboard {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: auto;
+	max-height: 300px;
+	max-width: 300px;
+	min-height: 300px;
+	max-height: 300px;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--text-color);
+	border: 2px;
+	padding: 2px;
+	margin: 2px;
+	height: 55px;
+	width: 55px;
+	border-radius: 50px;
+	font-family: Roboto, sans-serif;
+	font-size: 25px;
+}
+
+.digits {
+	background-color: var(--button-digits);
+}
+
+.special-digits {
+	background-color: var(--button-special-digits);
+}
+
+.operators {
+	background-color: var(--button-operators);
+}
