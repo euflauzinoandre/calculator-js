@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>CalculatorJS</title>
 	<link rel="stylesheet" href="./style/style.css">
-	<script src="./scripts/calculator.js" defer></script>
+	<script src="scripts/calculator.js" defer></script>
 </head>
 
 <body>
@@ -15,8 +15,8 @@
 		<div id="display">
 		</div>
 		<div id="keyboard">
-			<div class="button special-digits">⌫</div>
-			<div class="button special-digits">AC</div>
+			<div class="button special-digits" id="backspace">⌫</div>
+			<div class="button special-digits" id="allClear">AC</div>
 			<div class="button special-digits">%</div>
 			<div class="button operators" id="division">÷</div>
 			<div class="button digits">7</div>
@@ -33,10 +33,11 @@
 			<div class="button operators" id="addition">+</div>
 			<div class="button digits">+/-</div>
 			<div class="button digits">0</div>
-			<div class="button digits">.</div>
+			<div class="button digits" id="dot">.</div>
 			<div class="button operators" id="equal">=</div>
 		</div>
 	</div>
+	<footer>Powered by @Codezino</footer>
 </body>
 
 </html>
