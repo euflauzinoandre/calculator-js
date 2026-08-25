@@ -83,6 +83,10 @@ footer {
 	font-size: 25px;
 }
 
+.button:active {
+	opacity: 0.7;
+}
+
 .digits {
 	background-color: var(--button-digits);
 }
@@ -93,4 +97,8 @@ footer {
 
 .operators {
 	background-color: var(--button-operators);
+}
+
+.pointer {
+	cursor: pointer;
 }
