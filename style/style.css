@@ -40,6 +40,16 @@ footer {
 	border-radius: 40px;
 }
 
+#data {
+	color: var(--text-color);
+	font-family: Roboto, sans-serif;
+	font-size: small;
+	min-height: 50px;
+	max-height: 50px;
+	margin-left: 40px;
+	margin-top: 10px;
+}
+
 #display {
 	display: flex;
 	justify-content: flex-end;
@@ -47,11 +57,11 @@ footer {
 	flex-wrap: wrap;
 	min-width: 250px;
 	max-width: 250px;
-	min-height: 200px;
-	max-height: 200px;
-	margin: 60px 20px 5px;
+	min-height: 150px;
+	max-height: 150px;
+	margin: 40px 20px 5px;
 	font-family: Roboto, sans-serif;
-	font-size: 60px;
+	font-size: 50px;
 	color: var(--text-color);
 }
 
@@ -61,11 +71,11 @@ footer {
 	justify-content: center;
 	flex-wrap: wrap;
 	margin: auto;
-	max-height: 300px;
+	min-width: 300px;
 	max-width: 300px;
 	min-height: 300px;
 	max-height: 300px;
-	margin-bottom: 40px;
+	margin-bottom: 50px;
 }
 
 .button {
