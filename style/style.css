@@ -116,7 +116,8 @@ button:active {
 	background-color: var(--button-special-digits);
 }
 
-.operators {
+.operators,
+#equal {
 	background-color: var(--button-operators);
 }
 
