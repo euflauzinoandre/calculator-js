@@ -50,10 +50,10 @@ function operate(firstNumber, secondNumber, operator) {
 	return operator == "+"
 		? Number(firstNumber) + Number(secondNumber)
 		: operator == "–"
-			? firstNumber - secondNumber
+			? Number(firstNumber) - Number(secondNumber)
 			: operator == "x"
-				? firstNumber * secondNumber
+				? Number(firstNumber) * Number(secondNumber)
 				: operator == "÷"
-					? firstNumber / secondNumber
+					? Number(firstNumber) / Number(secondNumber)
 					: null;
 }
