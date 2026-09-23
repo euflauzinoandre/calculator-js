@@ -11,7 +11,7 @@ let displayValue = "";
 //Get digits on display
 digits.forEach((element) =>
 	element.addEventListener("click", () => {
-		if (firstNumber == "") {
+		if (operator == "") {
 			displayValue += element.textContent;
 			firstNumber = displayValue;
 		}
