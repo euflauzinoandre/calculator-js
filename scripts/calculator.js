@@ -6,12 +6,19 @@ const digits = buttons.querySelectorAll(".digits");
 let firstNumber = "";
 let secondNumber = "";
 let operator = "";
-let value = "";
+let displayValue = "";
 
+//Get digits on display
 digits.forEach((element) =>
 	element.addEventListener("click", () => {
-		value += element.textContent;
-		display.textContent += value;
+		if (operator == "") {
+			displayValue += element.textContent;
+			firstNumber = displayValue;
+		} else {
+			displayValue += element.textContent;
+			secondNumber += element.textContent;
+		}
+		display.textContent = displayValue;
 	}),
 );
 
@@ -19,31 +26,39 @@ digits.forEach((element) =>
 const allClear = document.querySelector("#allClear");
 allClear.addEventListener("click", () => {
 	display.textContent = "";
-	value = "";
+	displayValue = "";
+	firstNumber = "";
+	secondNumber = "";
+	operator = "";
 });
 
 //Clear the last display caractere
 const backspace = document.querySelector("#backspace");
 backspace.addEventListener("click", () => {
-	display.textContent = display.textContent.slice(0, -1);
+	if (secondNumber == "" && operator == "")
+		firstNumber = firstNumber.slice(0, -1);
+	if (secondNumber == "" && operator != "") operator = "";
+	if (secondNumber != "") secondNumber = secondNumber.slice(0, -1);
+	displayValue = displayValue.slice(0, -1);
+	display.textContent = displayValue;
 });
 
 //Get any operator
 const getOperator = document.querySelectorAll(".operators");
 getOperator.forEach((element) =>
 	element.addEventListener("click", () => {
-		firstNumber = value;
-		operator = element.textContent;
-		display.textContent = firstNumber + operator;
-		value = "";
+		if (operator == "") {
+			operator = element.textContent;
+			displayValue += operator;
+			display.textContent = displayValue;
+		}
 	}),
 );
 
 const equal = document.querySelector("#equal");
 equal.addEventListener("click", () => {
-	secondNumber = value;
 	display.textContent = String(operate(firstNumber, secondNumber, operator));
-	value = "";
+	displayValue = "";
 });
 
 function operate(firstNumber, secondNumber, operator) {
