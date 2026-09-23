@@ -11,10 +11,11 @@ let displayValue = "";
 //Get digits on display
 digits.forEach((element) =>
 	element.addEventListener("click", () => {
-		if (operator == "") {
+		if (firstNumber == "") {
 			displayValue += element.textContent;
 			firstNumber = displayValue;
-		} else {
+		}
+		if (operator != "") {
 			displayValue += element.textContent;
 			secondNumber += element.textContent;
 		}
@@ -57,8 +58,11 @@ getOperator.forEach((element) =>
 
 const equal = document.querySelector("#equal");
 equal.addEventListener("click", () => {
-	display.textContent = String(operate(firstNumber, secondNumber, operator));
-	displayValue = "";
+	displayValue = String(operate(firstNumber, secondNumber, operator));
+	display.textContent = displayValue;
+	firstNumber = displayValue;
+	secondNumber = "";
+	operator = "";
 });
 
 function operate(firstNumber, secondNumber, operator) {
