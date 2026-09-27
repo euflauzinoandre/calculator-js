@@ -7,15 +7,19 @@ let firstNumber = "";
 let secondNumber = "";
 let operator = "";
 let displayValue = "";
+let resetDisplay = 0;
 
 //Get digits on display
 digits.forEach((element) =>
 	element.addEventListener("click", () => {
 		if (operator == "") {
+			if (resetDisplay == 1) {
+				displayValue = "";
+				resetDisplay = 0;
+			}
 			displayValue += element.textContent;
 			firstNumber = displayValue;
-		}
-		if (operator != "") {
+		} else {
 			displayValue += element.textContent;
 			secondNumber += element.textContent;
 		}
@@ -58,11 +62,15 @@ getOperator.forEach((element) =>
 
 const equal = document.querySelector("#equal");
 equal.addEventListener("click", () => {
-	displayValue = String(operate(firstNumber, secondNumber, operator));
+	if (secondNumber == "0" && operator == "÷") displayValue = "Seriously?";
+	else if (secondNumber != "" && operator != "") {
+		displayValue = String(operate(firstNumber, secondNumber, operator));
+		resetDisplay = 1;
+		firstNumber = displayValue;
+		secondNumber = "";
+		operator = "";
+	}
 	display.textContent = displayValue;
-	firstNumber = displayValue;
-	secondNumber = "";
-	operator = "";
 });
 
 function operate(firstNumber, secondNumber, operator) {
