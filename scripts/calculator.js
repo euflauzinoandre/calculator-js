@@ -62,8 +62,10 @@ getOperator.forEach((element) =>
 
 const equal = document.querySelector("#equal");
 equal.addEventListener("click", () => {
-	if (secondNumber == "0" && operator == "÷") displayValue = "Seriously?";
-	else if (secondNumber != "" && operator != "") {
+	if (secondNumber == "0" && operator == "÷") {
+		displayValue = "Seriously?";
+		resetDisplay = 1;
+	} else if (secondNumber != "" && operator != "") {
 		displayValue = String(operate(firstNumber, secondNumber, operator));
 		resetDisplay = 1;
 		firstNumber = displayValue;
