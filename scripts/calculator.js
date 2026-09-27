@@ -64,6 +64,8 @@ const equal = document.querySelector("#equal");
 equal.addEventListener("click", () => {
 	if (secondNumber == "0" && operator == "÷") {
 		displayValue = "Seriously?";
+		secondNumber = "";
+		operator = "";
 		resetDisplay = 1;
 	} else if (secondNumber != "" && operator != "") {
 		displayValue = String(operate(firstNumber, secondNumber, operator));
